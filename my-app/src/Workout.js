@@ -1,21 +1,18 @@
 import React from "react";
-import './App.css';
 import { Card, Button, Dropdown } from 'react-bootstrap/';
 
-function Workout({workOut}) {
-// const { workout, category, details, date, calories } = workOut
-
+function Workout() {
   return (
-          <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/FIA_F1_Austria_2021_Nr._55_Sainz.jpg/1920px-FIA_F1_Austria_2021_Nr._55_Sainz.jpg" />
+    <Card style={{ width: '18rem' }}>
+        <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/FIA_F1_Austria_2021_Nr._55_Sainz.jpg/1920px-FIA_F1_Austria_2021_Nr._55_Sainz.jpg" />
             <Card.Body>
                 <Card.Title>Workout</Card.Title>
-                <Card.Text>
-                This is where the workout decsription will go.
-                </Card.Text>
-                <Card.Text>
-                Calories burned:
-                </Card.Text>
+                    <Card.Text>
+                    This is where the workout decsription will go.
+                    </Card.Text>
+                    <Card.Text>
+                    Calories burned:
+                    </Card.Text>
                 <Dropdown>
                     <Dropdown.Toggle variant="success" id="dropdown-basic">
                         Workout Type
@@ -28,7 +25,7 @@ function Workout({workOut}) {
                 </Dropdown>
                 <Button variant="primary">Link to somewhere? Maybe show details?</Button>
             </Card.Body>    
-        </Card>
+    </Card>
   );
 }
 
