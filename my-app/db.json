@@ -1,0 +1,11 @@
+{
+    "workouts" : [
+        {
+           "workout": "random workout",
+            "category": "cardio",
+            "details": "went well",
+            "date": "2022-03-23",
+            "calories": 300 
+        }
+    ]
+}
