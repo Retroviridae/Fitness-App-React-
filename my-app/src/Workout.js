@@ -5,16 +5,16 @@ function Workout({work}) {
     const {workout, category, details, date, calories} = work
   return (
       <div>
-          <header>{workout}</header>
-          <p>{category}</p>
+          <h3>{workout}</h3>
+          <p>Category: {category}</p>
           {/* <select>
               <option>Cardio</option>
               <option>Weights</option>
               <option>Sports</option>
           </select> */}
-          <p>{details}</p>
-          <p>{calories}</p>
-          <p>{date}</p>
+          <p>Details: {details}</p>
+          <p>Calories burned: {calories}</p>
+          <p>Date completed: {date}</p>
       </div>
   );
 }
