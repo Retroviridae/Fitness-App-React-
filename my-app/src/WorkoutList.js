@@ -2,11 +2,11 @@ import React from "react";
 import Workout from "./Workout";
 
 function WorkoutList({workouts}) {
-  const workoutMaker = workouts.map(workout => {
+  const workoutMaker = workouts.map(work => {
     return (
       <Workout
-      key={workout.id}
-      workout={workout}
+      key={work.id}
+      work={work}
       />
     )
   })
