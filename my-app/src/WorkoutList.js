@@ -5,8 +5,6 @@ function WorkoutList() {
   return (
       <div>
           <Workout />
-          <Workout />
-          <Workout />
       </div>
   );
 }

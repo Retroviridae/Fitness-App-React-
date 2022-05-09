@@ -1,15 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
 import Header from './Header';
-import Workout from './Workout';
-import Form from './Form';
+import WorkoutForm from './WorkoutForm';
 import WorkoutList from './WorkoutList';
+
 
 function App() {
   return (
     <div className="App">
       <Header />
-      <Form />
+      <WorkoutForm />
       <WorkoutList />
     </div>
   );
