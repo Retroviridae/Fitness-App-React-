@@ -1,0 +1,36 @@
+{
+    "workouts" : [
+        {   
+            "id": 1,
+            "workout": "random workout",
+            "category": "cardio",
+            "details": "went well",
+            "date": "2022-03-23",
+            "calories": 300 
+        }, 
+        {
+            "id": 2,
+            "workout": "Curls",
+             "category": "Weights",
+             "details": "It hurt",
+             "date": "2022-03-23",
+             "calories": 300 
+         },
+         {
+            "id": 3,
+            "workout": "Run",
+             "category": "cardio",
+             "details": "It hurt more",
+             "date": "2022-03-23",
+             "calories": 300 
+         },
+         {
+            "id": 4,
+            "workout": "Volleyball",
+             "category": "Sports",
+             "details": "Was fun",
+             "date": "2022-03-23",
+             "calories": 300 
+         }
+    ]
+}
