@@ -1,12 +1,18 @@
 import React from "react";
 import Workout from "./Workout";
 
-function WorkoutList() {
+function WorkoutList({workouts}) {
+  const workoutMaker = workouts.map(workout => {
+    return (
+      <Workout
+      key={workout.id}
+      workout={workout}
+      />
+    )
+  })
   return (
       <div>
-          <Workout />
-          <Workout />
-          <Workout />
+          {workoutMaker}
       </div>
   );
 }
