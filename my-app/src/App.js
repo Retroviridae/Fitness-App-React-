@@ -8,7 +8,6 @@ function App() {
     <div className="App">
       <Header />
       <Workout />
-      {/* just testing to fix github */}
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
