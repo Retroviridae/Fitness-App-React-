@@ -2,7 +2,9 @@ import React from "react";
 import './App.css';
 import { Card, Button, Dropdown } from 'react-bootstrap/';
 
-function Workout() {
+function Workout({workOut}) {
+// const { workout, category, details, date, calories } = workOut
+
   return (
           <Card style={{ width: '18rem' }}>
             <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/FIA_F1_Austria_2021_Nr._55_Sainz.jpg/1920px-FIA_F1_Austria_2021_Nr._55_Sainz.jpg" />
