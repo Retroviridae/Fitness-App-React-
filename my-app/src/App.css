@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+.app-div {
+  border-color: #282c34;
+  border-width: 5px;
+}
