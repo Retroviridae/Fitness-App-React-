@@ -1,6 +1,7 @@
 import React from "react";
 import {  Navbar, Nav, Container, NavDropdown } from 'react-bootstrap/';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from 'react-router-dom'
 
 
 function Header() {
@@ -11,9 +12,9 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Workouts</Nav.Link>
-            <Nav.Link href="#link">New Workout</Nav.Link>
+            <Link to="/">Home</Link>
+            <Link to="/workouts">Workouts</Link>
+            <Link to="/workouts/new">New Workout</Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

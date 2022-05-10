@@ -1,7 +1,10 @@
 import Header from './Header';
 import WorkoutForm from './WorkoutForm';
 import WorkoutList from './WorkoutList';
+import Home from './Home';
 import React, { useState, useEffect } from 'react';
+import { Switch, Route } from 'react-router-dom'
+
 
 
 function App() {
@@ -17,8 +20,17 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <WorkoutForm />
-      <WorkoutList workoutArr={workoutArr}/>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/workouts/new">
+          <WorkoutForm />
+        </Route>
+        <Route path="/workouts">
+          <WorkoutList workoutArr={workoutArr}/>
+        </Route>
+      </Switch>
     </div>
   );
 }
