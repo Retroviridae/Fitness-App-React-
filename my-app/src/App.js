@@ -7,13 +7,17 @@ import { Route, Switch } from "react-router-dom";
 
 function App() {
   const [workoutArr, setWorkoutArr] =useState([])
+  const [deletedId, setDeletedId] = useState()
   useEffect(()=>{
     fetch("http://localhost:3000/workouts")
     .then(resp =>resp.json())
     .then(data => setWorkoutArr(data))
-  }
-    ,[])
+  } ,[])
 
+  //takes in id to send to workoutlist to filter
+  function deleteInfo(id){
+    setDeletedId(id)
+  }
 
   return (
     <div>
@@ -27,7 +31,7 @@ function App() {
       <WorkoutForm />
     </Route>
     <Route path="/workouts">
-      <WorkoutList workouts={workoutArr}/>
+      <WorkoutList workouts={workoutArr} deleteInfo={deleteInfo} deletedId={deletedId}/>
     </Route>
     </div>
   );

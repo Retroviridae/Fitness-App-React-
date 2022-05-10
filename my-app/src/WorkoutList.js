@@ -1,10 +1,11 @@
 import React from "react";
 import Workout from "./Workout";
 
-function WorkoutList({ workouts }) {
+function WorkoutList({ workouts, deleteInfo, deletedId }) {
+  const filteredWorkouts = workouts.filter(workout => workout.id !== deletedId)
   return (
       <div>
-          {workouts.map(workout=> <Workout workout={workout}key={workout.id}/>)}
+          {filteredWorkouts.map(workout=> <Workout workout={workout}key={workout.id} deleteInfo={deleteInfo}/>)}
       </div>
   );
 }
