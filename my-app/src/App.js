@@ -6,10 +6,11 @@ import React, { useState, useEffect } from 'react';
 import { Route, Switch } from "react-router-dom";
 import Home from './Home';
 import Edit from './Edit';
+import { useHistory } from 'react-router-dom'
 
 
 function App() {
-  // const history = useHistory();
+  const history = useHistory();
   const [workoutArr, setWorkoutArr] =useState([])
   const [editId, setEditId] = useState()
   const [form,setForm]=useState({
@@ -30,6 +31,7 @@ function App() {
   }
   function handleSubmit(e){
     e.preventDefault()
+    history.push("/workouts")
     fetch("http://localhost:3000/workouts",{
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -43,7 +45,8 @@ function App() {
         date:"",
         calories:""
     
-  })} 
+  })
+} 
 
   function handleEditForm (e) {
     e.preventDefault()

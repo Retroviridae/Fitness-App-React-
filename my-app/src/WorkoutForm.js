@@ -2,14 +2,12 @@ import React from 'react'
 import { Form, Button} from 'react-bootstrap/';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
-
-
+import { Link } from 'react-router-dom';
 
 function WorkoutForm({ form, handleFormChange, handleSubmit }) {
   return (
     <form onSubmit={(e)=>handleSubmit(e)}>
-      <Row>
+      <Row className='mt-2'>
         <Form.Label column lg={2}>
           Workout
         </Form.Label>
@@ -18,7 +16,7 @@ function WorkoutForm({ form, handleFormChange, handleSubmit }) {
         </Col>
       </Row>
       
-      <Row>
+      <Row className='mt-2'>
         <Form.Label column lg={2}>
           Details
         </Form.Label>
@@ -27,7 +25,7 @@ function WorkoutForm({ form, handleFormChange, handleSubmit }) {
         </Col>
       </Row>
       
-      <Row>
+      <Row className='mt-2'>
         <Form.Label column lg={2}>
           Calories
         </Form.Label>
@@ -36,7 +34,7 @@ function WorkoutForm({ form, handleFormChange, handleSubmit }) {
         </Col>
       </Row>
       
-      <Row>
+      <Row className='mt-2'>
         <Form.Label column lg={2}>
           Category
         </Form.Label>
@@ -50,7 +48,7 @@ function WorkoutForm({ form, handleFormChange, handleSubmit }) {
         </Col>
       </Row>
       
-      <Row>
+      <Row className='mt-2'>
         <Form.Label column lg={2}>
           Date
         </Form.Label>
@@ -58,9 +56,11 @@ function WorkoutForm({ form, handleFormChange, handleSubmit }) {
           <Form.Control type="date" placeholder="Date" name='date' value={form.date} onChange={(e)=>handleFormChange(e)} />
         </Col>
       </Row>
+      {/* <Link to="/"> */}
       <Button variant="primary" type="submit">
         Submit
       </Button>
+      {/* </Link> */}
     </form>
 
     
