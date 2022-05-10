@@ -3,7 +3,7 @@ import WorkoutForm from './WorkoutForm';
 import WorkoutList from './WorkoutList';
 import WorkoutEditForm from './WorkoutEditForm';
 import React, { useState, useEffect } from 'react';
-import { Route, useHistory } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Home from './Home';
 
 
@@ -60,6 +60,7 @@ function App() {
   return (
     <div>
       <Header />
+      <Switch>
     <Route exact path="/">
       {/* <p>This is the home page</p> */}
       <Home />
@@ -67,12 +68,13 @@ function App() {
     <Route path="/new">
       <WorkoutForm form={form} handleFormChange={handleFormChange} handleSubmit={handleSubmit}/>
     </Route>
-    <Route exact path="/workouts/:id/edit">
-      <WorkoutEditForm editId={editId}/>
+    <Route path="/workouts/:id/edit">
+      <WorkoutEditForm editId={editId} form={form} handleFormChange={handleFormChange} handleSubmit={handleSubmit}/>
     </Route>
     <Route path="/workouts">
       <WorkoutList workouts={workoutArr} deleteInfo={deleteInfo} handleEditId={handleEditId}/>
     </Route>
+    </Switch>
     </div>
   );
 }

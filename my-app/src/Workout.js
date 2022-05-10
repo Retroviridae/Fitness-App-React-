@@ -1,5 +1,6 @@
 import React from "react";
 import { Card, Button, ListGroup } from 'react-bootstrap/';
+import { Link } from 'react-router-dom'
 
 function Workout({ workout, deleteInfo, handleEditId }) {
   const {id} = workout
@@ -41,7 +42,9 @@ function Workout({ workout, deleteInfo, handleEditId }) {
                     <ListGroup.Item>Category: {workout.category}</ListGroup.Item>
                     <ListGroup.Item>Date: {workout.date}</ListGroup.Item>
                 </ListGroup>
-                <Button variant="primary" onClick={() => handleEdit(id)}>Edit</Button>
+                <Link to={`/workouts/${id}/edit`}>
+                  <Button  variant="primary" onClick={() => handleEdit(id)}>Edit</Button>
+                </Link>
                 <Button variant="warning" onClick={() => deleteHandler(id)}>Delete</Button>
             </Card.Body>    
     </Card>

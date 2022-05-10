@@ -6,12 +6,8 @@ import { useParams, useHistory } from 'react-router-dom'
 
 
 
-function WorkoutEditForm({ form, handleFormChange, handleSubmit }) {
-  // function onSubmit(e){
-  //   e.preventDefault()
-  //   console.log(e.target)
-  //   console.log(form)
-  // }
+function WorkoutEditForm({ form, handleFormChange, handleSubmit, editId}) {
+  console.log(editId)
   
   return (
     <form onSubmit={(e)=>handleSubmit(e)}>
