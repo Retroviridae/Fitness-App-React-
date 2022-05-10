@@ -16,7 +16,7 @@ function Header() {
           height="30"
           className="d-inline-block align-top"
         />{' '}
-      Insert fake company name here
+      ARCLIGHT
       </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
