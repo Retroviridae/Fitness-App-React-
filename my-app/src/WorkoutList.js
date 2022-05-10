@@ -1,10 +1,17 @@
 import React from "react";
 import Workout from "./Workout";
 
-function WorkoutList({ workouts, deleteInfo, deletedId }) {
+function WorkoutList({ workouts, deleteInfo, handleEditId}) {
   return (
       <div>
-          {workouts.map(workout=> <Workout workout={workout}key={workout.id} deleteInfo={deleteInfo}/>)}
+          {workouts.map(workout=> {
+          return (
+            <Workout 
+              workout={workout}
+              key={workout.id} 
+              deleteInfo={deleteInfo}
+              handleEditId={handleEditId}
+          />)})}
       </div>
   );
 }

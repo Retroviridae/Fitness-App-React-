@@ -1,6 +1,7 @@
 import Header from './Header';
 import WorkoutForm from './WorkoutForm';
 import WorkoutList from './WorkoutList';
+import WorkoutEditForm from './WorkoutEditForm';
 import React, { useState, useEffect } from 'react';
 import { Route, useHistory } from "react-router-dom";
 import Home from './Home';
@@ -9,6 +10,7 @@ import Home from './Home';
 function App() {
   // const history = useHistory();
   const [workoutArr, setWorkoutArr] =useState([])
+  const [editId, setEditId] = useState()
   const [form,setForm]=useState({
     workout:"",
     category:"",
@@ -32,18 +34,22 @@ function App() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(form)
   }).then(resp => resp.json())
-  .then(data => setWorkoutArr([...workoutArr,data]))
-  setForm({
-    workout:"",
-    category:"",
-    details:"",
-    date:"",
-    calories:""
+    .then(data => setWorkoutArr([...workoutArr,data]))
+      setForm({
+        workout:"",
+        category:"",
+        details:"",
+        date:"",
+        calories:""
     
   })
   // history.push('/workouts');
 
   } 
+
+  function handleEditId(id) {
+    setEditId(id)
+  }
 
   //takes in id from workout to filter
   function deleteInfo(id){
@@ -61,8 +67,11 @@ function App() {
     <Route path="/new">
       <WorkoutForm form={form} handleFormChange={handleFormChange} handleSubmit={handleSubmit}/>
     </Route>
+    <Route exact path="/workouts/:id/edit">
+      <WorkoutEditForm editId={editId}/>
+    </Route>
     <Route path="/workouts">
-      <WorkoutList workouts={workoutArr} deleteInfo={deleteInfo} />
+      <WorkoutList workouts={workoutArr} deleteInfo={deleteInfo} handleEditId={handleEditId}/>
     </Route>
     </div>
   );
