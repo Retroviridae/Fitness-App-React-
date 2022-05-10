@@ -1,28 +1,28 @@
 {
   "workouts": [
     {
-      "id": 2,
-      "workout": "Curls",
-      "category": "Weights",
-      "details": "It hurt",
-      "date": "2022-03-23",
-      "calories": 300
-    },
-    {
-      "id": 3,
-      "workout": "Run",
-      "category": "Cardio",
-      "details": "It hurt more",
-      "date": "2022-03-23",
-      "calories": 300
-    },
-    {
       "id": 4,
-      "workout": "Volleyball",
+      "workout": "Wrasslin",
       "category": "Sports",
-      "details": "Was fun",
-      "date": "2022-03-23",
-      "calories": 300
+      "details": "Yes",
+      "date": "2022-05-10",
+      "calories": "2"
+    },
+    {
+      "workout": "Wrasslin",
+      "category": "Cardio",
+      "details": "Yes",
+      "date": "",
+      "calories": "3",
+      "id": 5
+    },
+    {
+      "workout": "Wrasslin",
+      "category": "Weights",
+      "details": "Yes",
+      "date": "",
+      "calories": "7",
+      "id": 6
     }
   ]
 }

@@ -3,20 +3,20 @@ import { Card, Button, ListGroup, Form } from 'react-bootstrap/';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-function Edit() {
+function Edit({ goals, handleEdit }) {
   return (
       <div>
-        <Card border="primary" style={{ width: '18rem' }}>
+        <Card border="primary" style={{ width: '40rem' }}>
             <Card.Header className="text-center">Goals</Card.Header>
             <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/FIA_F1_Austria_2021_Nr._55_Sainz.jpg/1920px-FIA_F1_Austria_2021_Nr._55_Sainz.jpg" />
                 <Card.Body>
-                <form>
+                <form >
         <Row>
             <Form.Label column lg={2}>
             Goal Weight
             </Form.Label>
             <Col xs={7}>
-            <Form.Control type="text" placeholder="Workout" name='workout' value='200'  />
+            <Form.Control type="text" placeholder="Workout" name='weight' value={goals.weight} onChange={(e)=>handleEdit(e)} />
             </Col>
         </Row>
         
@@ -25,7 +25,7 @@ function Edit() {
             Primary Goal
             </Form.Label>
             <Col xs={7}>
-            <Form.Control type="text" placeholder="Details" name='details' value='Do 10 pullups'  />
+            <Form.Control type="text" placeholder="Details" name='primary' value={goals.primary} onChange={(e)=>handleEdit(e)}  />
             </Col>
         </Row>
         <Row>
@@ -33,7 +33,7 @@ function Edit() {
             Secondary Goal
             </Form.Label>
             <Col xs={7}>
-            <Form.Control type="text" placeholder="Details" name='details' value='Run 5 miles'  />
+            <Form.Control type="text" placeholder="Details" name='secondary' value={goals.secondary} onChange={(e)=>handleEdit(e)}  />
             </Col>
         </Row>
 

@@ -19,6 +19,11 @@ function App() {
     date:"",
     calories:""
   })
+  const [goals,setGoals]= useState({
+    weight:"200",
+    primary:"Get stronger",
+    secondary:"Fight the guy from the price is right"
+  })
   useEffect(()=>{
     fetch("http://localhost:3000/workouts")
     .then(resp =>resp.json())
@@ -71,24 +76,30 @@ function App() {
     const filteredWorkouts = workoutArr.filter(workout => workout.id !== id)
     setWorkoutArr(filteredWorkouts)
   }
+  function handleEdit(e){
+    setGoals({...goals,[e.target.name]:e.target.value})
+  }
+
   return (
     <div>
       <Header />
       <Switch>
-    <Route exact path="/">
-      {/* <p>This is the home page</p> */}
-      <Home />
-    </Route>
-    <Route path="/new">
-      <WorkoutForm form={form} handleFormChange={handleFormChange} handleSubmit={handleSubmit}/>
-    </Route>
-    <Route path="/workouts/:id/edit">
-      <WorkoutEditForm editId={editId} form={form} handleFormChange={handleFormChange} handleEditForm={handleEditForm}/>
-    </Route>
-    <Route path="/workouts">
-      <WorkoutList workouts={workoutArr} deleteInfo={deleteInfo} handleEditId={handleEditId}/>
-    </Route>
-    </Switch>
+        <Route exact path="/">
+          <Home goals={goals} handleEdit={handleEdit}/>
+        </Route>
+        <Route path="/new">
+          <WorkoutForm form={form} handleFormChange={handleFormChange} handleSubmit={handleSubmit}/>
+        </Route>
+        <Route path="/workouts/:id/edit">
+          <WorkoutEditForm editId={editId} form={form} handleFormChange={handleFormChange} handleEditForm={handleEditForm}/>
+        </Route>
+        <Route path="/workouts">
+          <WorkoutList workouts={workoutArr} deleteInfo={deleteInfo} handleEditId={handleEditId}/>
+        </Route>
+        <Route path="/edit">
+          <Edit goals={goals} handleEdit={handleEdit}/>
+        </Route>
+      </Switch>
     </div>
   );
 }

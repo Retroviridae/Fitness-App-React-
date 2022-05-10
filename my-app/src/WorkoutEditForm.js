@@ -7,7 +7,7 @@ import { useParams, useHistory } from 'react-router-dom'
 
 
 function WorkoutEditForm({ form, handleFormChange, handleEditForm, editId}) {
-  console.log(editId)
+  // console.log(editId)
   
   return (
     <form onSubmit={(e)=>handleEditForm(e)}>
