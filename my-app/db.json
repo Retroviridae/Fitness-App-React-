@@ -2,7 +2,7 @@
   "workouts" : [
       {   
           "id": 1,
-          "workout": "random workout",
+          "workout": "Random workout",
           "category": "cardio",
           "details": "went well",
           "date": "2022-03-23",

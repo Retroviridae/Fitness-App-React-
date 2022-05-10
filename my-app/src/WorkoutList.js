@@ -1,10 +1,10 @@
 import React from "react";
 import Workout from "./Workout";
 
-function WorkoutList() {
+function WorkoutList({ workouts }) {
   return (
       <div>
-          <Workout />
+          {workouts.map(workout=> <Workout workout={workout}key={workout.id}/>)}
       </div>
   );
 }

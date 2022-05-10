@@ -2,14 +2,11 @@ import Header from './Header';
 import WorkoutForm from './WorkoutForm';
 import WorkoutList from './WorkoutList';
 import React, { useState, useEffect } from 'react';
+import { Route, Switch } from "react-router-dom";
 
 
 function App() {
   const [workoutArr, setWorkoutArr] =useState([])
-  fetch("http://localhost:3000/workouts")
-  .then(resp => resp.json())
-  .then(data => setWorkoutArr(data))
-
   useEffect(()=>{
     fetch("http://localhost:3000/workouts")
     .then(resp =>resp.json())
@@ -19,12 +16,25 @@ function App() {
 
 
   return (
-    <div className="App">
+    <div>
       <Header />
+    <Route exact path="/">
+      <p>This is the home page</p>
+      {/* <WorkoutList workouts={workoutArr}/>
+      <WorkoutForm /> */}
+    </Route>
+    <Route path="/new">
       <WorkoutForm />
-      <WorkoutList />
+    </Route>
+    <Route path="/workouts">
+      <WorkoutList workouts={workoutArr}/>
+    </Route>
     </div>
   );
 }
-
 export default App;
+//   <Route path="/">
+{/* <Header />
+<WorkoutForm />
+<WorkoutList workouts={workoutArr}/> */}
+// </Route>
