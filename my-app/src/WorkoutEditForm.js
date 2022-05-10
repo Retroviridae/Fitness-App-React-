@@ -6,11 +6,11 @@ import { useParams, useHistory } from 'react-router-dom'
 
 
 
-function WorkoutEditForm({ form, handleFormChange, handleSubmit, editId}) {
+function WorkoutEditForm({ form, handleFormChange, handleEditForm, editId}) {
   console.log(editId)
   
   return (
-    <form onSubmit={(e)=>handleSubmit(e)}>
+    <form onSubmit={(e)=>handleEditForm(e)}>
       <Row>
         <Form.Label column lg={2}>
           Workout

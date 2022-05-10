@@ -42,10 +42,20 @@ function App() {
         date:"",
         calories:""
     
-  })
-  // history.push('/workouts');
+  })} 
 
-  } 
+  function handleEditForm (e) {
+    e.preventDefault()
+    fetch(`http://localhost:3000/workouts/${editId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(form),
+    }).then(res => res.json())
+      .then(data => console.log(data))
+  }
 
   function handleEditId(id) {
     setEditId(id)
@@ -69,7 +79,7 @@ function App() {
       <WorkoutForm form={form} handleFormChange={handleFormChange} handleSubmit={handleSubmit}/>
     </Route>
     <Route path="/workouts/:id/edit">
-      <WorkoutEditForm editId={editId} form={form} handleFormChange={handleFormChange} handleSubmit={handleSubmit}/>
+      <WorkoutEditForm editId={editId} form={form} handleFormChange={handleFormChange} handleEditForm={handleEditForm}/>
     </Route>
     <Route path="/workouts">
       <WorkoutList workouts={workoutArr} deleteInfo={deleteInfo} handleEditId={handleEditId}/>
