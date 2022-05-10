@@ -44,15 +44,3 @@ function Workout({ workout, deleteInfo }) {
 }
 
 export default Workout;
-// const bike = "http://www.emoji.co.uk/files/phantom-open-emojis/activity-phantom/12632-bicyclist.png"
-// const weights = "https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-10/256/man-lifting-weights-medium-skin-tone.png"
-// const sports = "https://img1.pnghut.com/3/4/3/KcFtrCUcgS/soccer-kick-team-sport-player-football-sports.jpg"
-// const emoji = ()=>{
-//   if (workout.category === "Cardio"){
-//     return bike
-//   }else if (workout.category === 'Weights'){
-//     return weights
-//   }else if (workout.category === 'Sports'){
-//     return sports
-//   }
-// }

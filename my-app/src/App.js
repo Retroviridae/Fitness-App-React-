@@ -20,15 +20,31 @@ function App() {
     .then(data => setWorkoutArr(data))
   } 
     ,[])
-    function handleFormChange(e){
-      setForm({...form,[e.target.name]:e.target.value})
-    }
+  function handleFormChange(e){
+    setForm({...form,[e.target.name]:e.target.value})
+  }
+  function handleSubmit(e){
+    e.preventDefault()
+    fetch("http://localhost:3000/workouts",{
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(form)
+  }).then(resp => resp.json())
+  .then(data => setWorkoutArr([...workoutArr,data]))
+  setForm({
+    workout:"",
+    category:"",
+    details:"",
+    date:"",
+    calories:""
+  })
+  } 
 
   //takes in id from workout to filter
   function deleteInfo(id){
-    // const filteredWorkouts = workoutArr.filter(workout => workout.id !== id)
-    // setWorkoutArr(filteredWorkouts)
-    console.log('delete info')
+    const filteredWorkouts = workoutArr.filter(workout => workout.id !== id)
+    setWorkoutArr(filteredWorkouts)
+    // console.log('delete info')
   }
 
   return (
@@ -40,7 +56,7 @@ function App() {
       <WorkoutForm /> */}
     </Route>
     <Route path="/new">
-      <WorkoutForm form={form} handleFormChange={handleFormChange}/>
+      <WorkoutForm form={form} handleFormChange={handleFormChange} handleSubmit={handleSubmit}/>
     </Route>
     <Route path="/workouts">
       <WorkoutList workouts={workoutArr} deleteInfo={deleteInfo} />
@@ -49,8 +65,3 @@ function App() {
   );
 }
 export default App;
-//   <Route path="/">
-{/* <Header />
-<WorkoutForm />
-<WorkoutList workouts={workoutArr}/> */}
-// </Route>
