@@ -1,35 +1,35 @@
 import React from "react";
-import { Card, Button, Dropdown } from 'react-bootstrap/';
+import { Card, Button, ListGroup } from 'react-bootstrap/';
 
-function Workout({work}) {
-console.log(work.category)
-
-
-    return (
-          <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/FIA_F1_Austria_2021_Nr._55_Sainz.jpg/1920px-FIA_F1_Austria_2021_Nr._55_Sainz.jpg" />
+function Workout({ workout }) {
+  return (
+    <Card border="primary" style={{ width: '18rem' }}>
+        <Card.Header className="text-center">{workout.workout}</Card.Header>
+        <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/FIA_F1_Austria_2021_Nr._55_Sainz.jpg/1920px-FIA_F1_Austria_2021_Nr._55_Sainz.jpg" />
             <Card.Body>
-                <Card.Title>Workout</Card.Title>
-                <Card.Text>
-                This is where the workout decsription will go.
-                </Card.Text>
-                <Card.Text>
-                Calories burned:
-                </Card.Text>
-                <Dropdown>
-                    <Dropdown.Toggle variant="success" id="dropdown-basic">
-                        Workout Type
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu>
-                        <Dropdown.Item href="#/action-1">Cardio</Dropdown.Item>
-                        <Dropdown.Item href="#/action-2">Strength</Dropdown.Item>
-                        <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-                    </Dropdown.Menu>
-                </Dropdown>
-                <Button variant="primary">Link to somewhere? Maybe show details?</Button>
+                <Card.Text>Description: {workout.details}</Card.Text>
+                <ListGroup>
+                    <ListGroup.Item>Calories burned:{workout.calories}</ListGroup.Item>
+                    <ListGroup.Item>Category: {workout.category}</ListGroup.Item>
+                    <ListGroup.Item>Date: {workout.date}</ListGroup.Item>
+                </ListGroup>
+                <Button variant="primary">Edit</Button>
+                <Button variant="warning">Delete</Button>
             </Card.Body>    
-        </Card>
+    </Card>
   );
 }
 
+{/* <Card.Text>
+{workout.details}
+</Card.Text>
+<Card.Text>
+Calories burned:{workout.calories}
+</Card.Text>
+<Card.Text>
+Category: {workout.category}
+</Card.Text>
+<Card.Text>
+Date: {workout.date}
+</Card.Text> */}
 export default Workout;

@@ -6,6 +6,16 @@ import Col from 'react-bootstrap/Col';
 
 
 function WorkoutForm() {
+//   <Dropdown>
+//   <Dropdown.Toggle variant="success" id="dropdown-basic">
+//       Workout Type
+//   </Dropdown.Toggle>
+//   <Dropdown.Menu>
+//       <Dropdown.Item href="#/action-1">Cardio</Dropdown.Item>
+//       <Dropdown.Item href="#/action-2">Strength</Dropdown.Item>
+//       <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
+//   </Dropdown.Menu>
+// </Dropdown>
   return (
     <form>
       <Row>
