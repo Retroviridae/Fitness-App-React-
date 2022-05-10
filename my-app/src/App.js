@@ -18,12 +18,17 @@ function App() {
     fetch("http://localhost:3000/workouts")
     .then(resp =>resp.json())
     .then(data => setWorkoutArr(data))
-  }
+  } 
     ,[])
     function handleFormChange(e){
       setForm({...form,[e.target.name]:e.target.value})
     }
 
+  //takes in id from workout to filter
+  function deleteInfo(id){
+    const filteredWorkouts = workoutArr.filter(workout => workout.id !== id)
+    setWorkoutArr(filteredWorkouts)
+  }
 
   return (
     <div>
@@ -37,7 +42,7 @@ function App() {
       <WorkoutForm form={form} handleFormChange={handleFormChange}/>
     </Route>
     <Route path="/workouts">
-      <WorkoutList workouts={workoutArr}/>
+      <WorkoutList workouts={workoutArr} deleteInfo={deleteInfo} />
     </Route>
     </div>
   );

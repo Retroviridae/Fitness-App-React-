@@ -1,7 +1,19 @@
 import React from "react";
 import { Card, Button, ListGroup } from 'react-bootstrap/';
 
-function Workout({ workout }) {
+function Workout({ workout, deleteInfo }) {
+  const {id} = workout
+  
+  
+  function deleteHandler(id) {
+    deleteInfo(id)
+
+    fetch(`http://localhost:3000/workouts/${id}`, 
+      { method: 'DELETE' })
+      // .then(res => res.json())
+      // .then(data => console.log(data))
+  }
+
   return (
     <Card border="primary" style={{ width: '18rem' }}>
         <Card.Header className="text-center">{workout.workout}</Card.Header>
@@ -14,7 +26,7 @@ function Workout({ workout }) {
                     <ListGroup.Item>Date: {workout.date}</ListGroup.Item>
                 </ListGroup>
                 <Button variant="primary">Edit</Button>
-                <Button variant="warning">Delete</Button>
+                <Button variant="warning" onClick={() => deleteHandler(id)}>Delete</Button>
             </Card.Body>    
     </Card>
   );
