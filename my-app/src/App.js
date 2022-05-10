@@ -18,7 +18,7 @@ function App() {
     <div className="App">
       <Header />
       <WorkoutForm />
-      <WorkoutList />
+      <WorkoutList workoutArr={workoutArr}/>
     </div>
   );
 }
