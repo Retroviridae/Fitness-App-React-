@@ -7,6 +7,11 @@ function Workout({ workout, deleteInfo }) {
   
   function deleteHandler(id) {
     deleteInfo(id)
+
+    fetch(`http://localhost:3000/workouts/${id}`, 
+      { method: 'DELETE' })
+      // .then(res => res.json())
+      // .then(data => console.log(data))
   }
 
   return (

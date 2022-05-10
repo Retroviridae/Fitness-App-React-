@@ -5,17 +5,7 @@ import Col from 'react-bootstrap/Col';
 
 
 
-function WorkoutForm() {
-//   <Dropdown>
-//   <Dropdown.Toggle variant="success" id="dropdown-basic">
-//       Workout Type
-//   </Dropdown.Toggle>
-//   <Dropdown.Menu>
-//       <Dropdown.Item href="#/action-1">Cardio</Dropdown.Item>
-//       <Dropdown.Item href="#/action-2">Strength</Dropdown.Item>
-//       <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-//   </Dropdown.Menu>
-// </Dropdown>
+function WorkoutForm({ form, handleFormChange }) {
   return (
     <form>
       <Row>
@@ -23,7 +13,7 @@ function WorkoutForm() {
           Workout
         </Form.Label>
         <Col xs={7}>
-          <Form.Control type="text" placeholder="Workout" />
+          <Form.Control type="text" placeholder="Workout" name='workout' value={form.workout} onChange={(e)=>handleFormChange(e)} />
         </Col>
       </Row>
       
@@ -32,7 +22,7 @@ function WorkoutForm() {
           Details
         </Form.Label>
         <Col xs={7}>
-          <Form.Control type="text" placeholder="Details" />
+          <Form.Control type="text" placeholder="Details" name='details' value={form.details} onChange={(e)=>handleFormChange(e)} />
         </Col>
       </Row>
       
@@ -41,7 +31,7 @@ function WorkoutForm() {
           Calories
         </Form.Label>
         <Col xs={7}>
-          <Form.Control type="number" placeholder="Calories" />
+          <Form.Control type="number" placeholder="Calories" name='calories' value={form.calories} onChange={(e)=>handleFormChange(e)} />
         </Col>
       </Row>
       
@@ -50,8 +40,8 @@ function WorkoutForm() {
           Category
         </Form.Label>
         <Col xs={7}>
-          <Form.Select aria-label="Default select example">
-            <option>Category</option>
+          <Form.Select name='category' value={form.category} aria-label="Default select example" onChange={(e)=>handleFormChange(e)} >
+            <option >Category</option>
             <option value="Cardio">Cardio</option>
             <option value="Weights">Weights</option>
             <option value="Sports">Sports</option>
@@ -64,7 +54,7 @@ function WorkoutForm() {
           Date
         </Form.Label>
         <Col xs={3}>
-          <Form.Control type="date" placeholder="Date" />
+          <Form.Control type="date" placeholder="Date" name='date' value={form.date} onChange={(e)=>handleFormChange(e)} />
         </Col>
       </Row>
       <Button variant="primary" type="submit">
