@@ -3,7 +3,7 @@
       {   
           "id": 1,
           "workout": "Random workout",
-          "category": "cardio",
+          "category": "Cardio",
           "details": "went well",
           "date": "2022-03-23",
           "calories": 300 
@@ -19,7 +19,7 @@
        {
           "id": 3,
           "workout": "Run",
-           "category": "cardio",
+           "category": "Cardio",
            "details": "It hurt more",
            "date": "2022-03-23",
            "calories": 300 
