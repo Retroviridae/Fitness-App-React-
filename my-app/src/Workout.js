@@ -13,7 +13,8 @@ function Workout({ workout }) {
                     <ListGroup.Item>Category: {workout.category}</ListGroup.Item>
                     <ListGroup.Item>Date: {workout.date}</ListGroup.Item>
                 </ListGroup>
-                <Button variant="primary">Link to somewhere? Maybe show details?</Button>
+                <Button variant="primary">Edit</Button>
+                <Button variant="warning">Delete</Button>
             </Card.Body>    
     </Card>
   );
