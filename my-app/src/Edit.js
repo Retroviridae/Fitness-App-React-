@@ -3,7 +3,7 @@ import { Card, Button, ListGroup, Form } from 'react-bootstrap/';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-function Edit({ goals, handleEdit }) {
+function Edit({ goals }) {
   return (
       <div>
         <Card border="primary" style={{ width: '40rem' }}>
@@ -16,7 +16,7 @@ function Edit({ goals, handleEdit }) {
             Goal Weight
             </Form.Label>
             <Col xs={7}>
-            <Form.Control type="text" placeholder="Workout" name='weight' value={goals.weight} onChange={(e)=>handleEdit(e)} />
+            <Form.Control type="text" placeholder="Workout" name='weight' value={goals.weight} />
             </Col>
         </Row>
         
@@ -25,7 +25,7 @@ function Edit({ goals, handleEdit }) {
             Primary Goal
             </Form.Label>
             <Col xs={7}>
-            <Form.Control type="text" placeholder="Details" name='primary' value={goals.primary} onChange={(e)=>handleEdit(e)}  />
+            <Form.Control type="text" placeholder="Details" name='primary' value={goals.primary} />
             </Col>
         </Row>
         <Row>
@@ -33,7 +33,7 @@ function Edit({ goals, handleEdit }) {
             Secondary Goal
             </Form.Label>
             <Col xs={7}>
-            <Form.Control type="text" placeholder="Details" name='secondary' value={goals.secondary} onChange={(e)=>handleEdit(e)}  />
+            <Form.Control type="text" placeholder="Details" name='secondary' value={goals.secondary}  />
             </Col>
         </Row>
 
