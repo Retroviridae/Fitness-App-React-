@@ -5,12 +5,8 @@ import Col from 'react-bootstrap/Col';
 
 
 
+
 function WorkoutForm({ form, handleFormChange, handleSubmit }) {
-  // function onSubmit(e){
-  //   e.preventDefault()
-  //   console.log(e.target)
-  //   console.log(form)
-  // }
   return (
     <form onSubmit={(e)=>handleSubmit(e)}>
       <Row>
@@ -62,7 +58,7 @@ function WorkoutForm({ form, handleFormChange, handleSubmit }) {
           <Form.Control type="date" placeholder="Date" name='date' value={form.date} onChange={(e)=>handleFormChange(e)} />
         </Col>
       </Row>
-      <Button href="/workouts" variant="primary" type="submit">
+      <Button variant="primary" type="submit">
         Submit
       </Button>
     </form>
