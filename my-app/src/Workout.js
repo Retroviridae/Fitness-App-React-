@@ -1,7 +1,7 @@
 import React from "react";
 import { Card, Button, ListGroup } from 'react-bootstrap/';
 
-function Workout({ workout }) {
+function Workout({ workout, deleteInfo }) {
   const bike = "http://www.emoji.co.uk/files/phantom-open-emojis/activity-phantom/12632-bicyclist.png"
   const weights = "https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-10/256/man-lifting-weights-medium-skin-tone.png"
   const sports = "https://img1.pnghut.com/3/4/3/KcFtrCUcgS/soccer-kick-team-sport-player-football-sports.jpg"
@@ -14,7 +14,7 @@ function Workout({ workout }) {
       return sports
     }
   }
-  function Workout({ workout, deleteInfo }) {
+
   const {id} = workout
   function deleteHandler(id) {
     deleteInfo(id)
@@ -24,6 +24,7 @@ function Workout({ workout }) {
       // .then(res => res.json())
       // .then(data => console.log(data))
   }
+
     return (
     <Card border="primary" style={{ width: '18rem' }}>
         <Card.Header className="text-center">{workout.workout}</Card.Header>
@@ -43,3 +44,15 @@ function Workout({ workout }) {
 }
 
 export default Workout;
+// const bike = "http://www.emoji.co.uk/files/phantom-open-emojis/activity-phantom/12632-bicyclist.png"
+// const weights = "https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-10/256/man-lifting-weights-medium-skin-tone.png"
+// const sports = "https://img1.pnghut.com/3/4/3/KcFtrCUcgS/soccer-kick-team-sport-player-football-sports.jpg"
+// const emoji = ()=>{
+//   if (workout.category === "Cardio"){
+//     return bike
+//   }else if (workout.category === 'Weights'){
+//     return weights
+//   }else if (workout.category === 'Sports'){
+//     return sports
+//   }
+// }

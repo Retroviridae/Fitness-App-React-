@@ -26,8 +26,9 @@ function App() {
 
   //takes in id from workout to filter
   function deleteInfo(id){
-    const filteredWorkouts = workoutArr.filter(workout => workout.id !== id)
-    setWorkoutArr(filteredWorkouts)
+    // const filteredWorkouts = workoutArr.filter(workout => workout.id !== id)
+    // setWorkoutArr(filteredWorkouts)
+    console.log('delete info')
   }
 
   return (
