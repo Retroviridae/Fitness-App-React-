@@ -2,6 +2,9 @@ import React from "react";
 import Workout from "./Workout";
 
 function WorkoutList({ workouts, deleteInfo, handleEditId}) {
+  //// ORDERED ARRAY NOT CALLED YET //////
+  const orderedWorkouts = workouts.slice().sort(function(a,b){
+    return new Date(b.date) - new Date(a.date)})
   return (
       <div>
           {workouts.map(workout=> {

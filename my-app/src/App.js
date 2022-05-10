@@ -38,6 +38,7 @@ function App() {
       body: JSON.stringify(form)
   }).then(resp => resp.json())
     .then(data => setWorkoutArr([...workoutArr,data]))
+      history.push("/workouts")
       setForm({
         workout:"",
         category:"",
@@ -50,6 +51,7 @@ function App() {
 
   function handleEditForm (e) {
     e.preventDefault()
+    // history.push("/workouts")
     fetch(`http://localhost:3000/workouts/${editId}`, {
       method: "PATCH",
       headers: {
@@ -61,8 +63,9 @@ function App() {
       .then(data => setWorkoutArr(workoutArr.filter(workout => {
         if (workout.id === data.id){
           return data
-        }else return false
-      })))
+        }else return true
+      })));
+        // history.push("/workouts")
   }
 
   function handleEditId(id) {
@@ -74,6 +77,7 @@ function App() {
     const filteredWorkouts = workoutArr.filter(workout => workout.id !== id)
     setWorkoutArr(filteredWorkouts)
   }
+  
   return (
     <div>
       <Header />
