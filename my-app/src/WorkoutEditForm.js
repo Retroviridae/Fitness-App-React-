@@ -7,9 +7,7 @@ import Col from 'react-bootstrap/Col';
 
 
 function WorkoutEditForm({ form, handleFormChange, handleEditForm, editId}) {
-  console.log(editId)
 
-  // const {id} = useParams()
   
   return (
     <form onSubmit={(e)=>handleEditForm(e)}>
