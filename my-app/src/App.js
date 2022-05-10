@@ -6,17 +6,13 @@ import React, { useState, useEffect } from 'react';
 
 function App() {
   const [workoutArr, setWorkoutArr] =useState([])
-  fetch("http://localhost:3000/workouts")
-  .then(resp => resp.json())
-  .then(data => setWorkoutArr(data))
 
   useEffect(()=>{
     fetch("http://localhost:3000/workouts")
     .then(resp =>resp.json())
     .then(data => setWorkoutArr(data))
-  }
-    ,[])
-
+  },[])
+  console.log(workoutArr)
 
   return (
     <div className="App">
