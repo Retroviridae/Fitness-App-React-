@@ -7,12 +7,22 @@ import { Route, Switch } from "react-router-dom";
 
 function App() {
   const [workoutArr, setWorkoutArr] =useState([])
+  const [form,setForm]=useState({
+    workout:"",
+    category:"",
+    details:"",
+    date:"",
+    calories:""
+  })
   useEffect(()=>{
     fetch("http://localhost:3000/workouts")
     .then(resp =>resp.json())
     .then(data => setWorkoutArr(data))
   }
     ,[])
+    function handleFormChange(e){
+      setForm({...form,[e.target.name]:e.target.value})
+    }
 
 
   return (
@@ -24,7 +34,7 @@ function App() {
       <WorkoutForm /> */}
     </Route>
     <Route path="/new">
-      <WorkoutForm />
+      <WorkoutForm form={form} handleFormChange={handleFormChange}/>
     </Route>
     <Route path="/workouts">
       <WorkoutList workouts={workoutArr}/>
