@@ -4,6 +4,7 @@ import WorkoutList from './WorkoutList';
 import React, { useState, useEffect } from 'react';
 import { Route, useHistory } from "react-router-dom";
 import Home from './Home';
+import Edit from './Edit';
 
 
 function App() {
@@ -63,6 +64,9 @@ function App() {
     </Route>
     <Route path="/workouts">
       <WorkoutList workouts={workoutArr} deleteInfo={deleteInfo} />
+    </Route>
+    <Route path="/edit">
+      <Edit />
     </Route>
     </div>
   );
