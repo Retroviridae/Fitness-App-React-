@@ -2,12 +2,12 @@ import React from 'react'
 import { Form, Button} from 'react-bootstrap/';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { useParams, useHistory } from 'react-router-dom'
+// import { useParams, useHistory } from 'react-router-dom'
 
 
 
 function WorkoutEditForm({ form, handleFormChange, handleEditForm, editId}) {
-  // console.log(editId)
+
   
   return (
     <form onSubmit={(e)=>handleEditForm(e)}>
