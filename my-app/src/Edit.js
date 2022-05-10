@@ -16,7 +16,7 @@ function Edit({ goals }) {
             Goal Weight
             </Form.Label>
             <Col xs={7}>
-            <Form.Control type="text" placeholder="Workout" name='weight' value={goals.weight} />
+            <Form.Control type="text" placeholder="Workout" name='weight'  />
             </Col>
         </Row>
         
@@ -25,7 +25,7 @@ function Edit({ goals }) {
             Primary Goal
             </Form.Label>
             <Col xs={7}>
-            <Form.Control type="text" placeholder="Details" name='primary' value={goals.primary} />
+            <Form.Control type="text" placeholder="Details" name='primary'  />
             </Col>
         </Row>
         <Row>
@@ -33,7 +33,7 @@ function Edit({ goals }) {
             Secondary Goal
             </Form.Label>
             <Col xs={7}>
-            <Form.Control type="text" placeholder="Details" name='secondary' value={goals.secondary}  />
+            <Form.Control type="text" placeholder="Details" name='secondary'   />
             </Col>
         </Row>
 

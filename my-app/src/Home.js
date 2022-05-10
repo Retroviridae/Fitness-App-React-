@@ -11,9 +11,9 @@ function Home({ goals }) {
         <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/FIA_F1_Austria_2021_Nr._55_Sainz.jpg/1920px-FIA_F1_Austria_2021_Nr._55_Sainz.jpg" />
             <Card.Body>
                 <ListGroup>
-                    <ListGroup.Item>Goal Weight: {goals.weight}</ListGroup.Item>
-                    <ListGroup.Item>Primary goal: {goals.primary} </ListGroup.Item>
-                    <ListGroup.Item>Seconday goal: {goals.secondary} </ListGroup.Item>
+                    <ListGroup.Item>Goal Weight: </ListGroup.Item>
+                    <ListGroup.Item>Primary goal:  </ListGroup.Item>
+                    <ListGroup.Item>Seconday goal:  </ListGroup.Item>
                 </ListGroup>
                 <Button variant="primary" href="/edit">Edit</Button>
             </Card.Body>    
