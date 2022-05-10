@@ -54,7 +54,11 @@ function App() {
       },
       body: JSON.stringify(form),
     }).then(res => res.json())
-      .then(data => console.log(data))
+      .then(data => setWorkoutArr(workoutArr.filter(workout => {
+        if (workout.id === data.id){
+          return data
+        }else return false
+      })))
   }
 
   function handleEditId(id) {
