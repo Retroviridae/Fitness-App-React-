@@ -1,7 +1,9 @@
 import React from "react";
 import { Card, Button, ListGroup } from 'react-bootstrap/';
+import { Link } from 'react-router-dom'
 
-function Workout({ workout, deleteInfo }) {
+function Workout({ workout, deleteInfo, handleEditId }) {
+  const {id} = workout
   const bike = "http://www.emoji.co.uk/files/phantom-open-emojis/activity-phantom/12632-bicyclist.png"
   const weights = "https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-10/256/man-lifting-weights-medium-skin-tone.png"
   const sports = "https://img1.pnghut.com/3/4/3/KcFtrCUcgS/soccer-kick-team-sport-player-football-sports.jpg"
@@ -15,7 +17,7 @@ function Workout({ workout, deleteInfo }) {
     }
   }
 
-  const {id} = workout
+ 
   function deleteHandler(id) {
     deleteInfo(id)
 
@@ -23,6 +25,10 @@ function Workout({ workout, deleteInfo }) {
       { method: 'DELETE' })
       // .then(res => res.json())
       // .then(data => console.log(data))
+  }
+
+  function handleEdit() {
+    handleEditId(id)
   }
 
     return (
@@ -36,7 +42,9 @@ function Workout({ workout, deleteInfo }) {
                     <ListGroup.Item>Category: {workout.category}</ListGroup.Item>
                     <ListGroup.Item>Date: {workout.date}</ListGroup.Item>
                 </ListGroup>
-                <Button variant="primary">Edit</Button>
+                <Link to={`/workouts/${id}/edit`}>
+                  <Button  variant="primary" onClick={() => handleEdit(id)}>Edit</Button>
+                </Link>
                 <Button variant="warning" onClick={() => deleteHandler(id)}>Delete</Button>
             </Card.Body>    
     </Card>
