@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col';
 function Home({ goals }) {
   return (
       <div>
-        <Card border="primary" style={{ width: '40rem' }}>
+        <Card border="primary" style={{ width: '40rem' , margin: 'auto'}}>
         <Card.Header className="text-center">Goals</Card.Header>
         <Card.Img variant="top" src="https://ih1.redbubble.net/image.1000561856.0547/pp,840x830-pad,1000x1000,f8f8f8.jpg" />
             <Card.Body>

@@ -61,12 +61,16 @@ function App() {
       },
       body: JSON.stringify(form),
     }).then(res => res.json())
-      .then(data => setWorkoutArr(workoutArr.map(workout => {
-        if (workout.id === data.id){
-          return data
-        }else return true
-      })));
+      .then(data => setWorkoutArr(workoutArr.map(workout => workout.id === data.id ? data : workout)));
       navigate("/workouts")
+      setForm({
+        workout:"",
+        category:"",
+        details:"",
+        date:"",
+        calories:""
+    
+  })
   }
 
   function handleEditId(id) {
