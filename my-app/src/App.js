@@ -61,7 +61,7 @@ function App() {
       },
       body: JSON.stringify(form),
     }).then(res => res.json())
-      .then(data => setWorkoutArr(workoutArr.filter(workout => {
+      .then(data => setWorkoutArr(workoutArr.map(workout => {
         if (workout.id === data.id){
           return data
         }else return true
