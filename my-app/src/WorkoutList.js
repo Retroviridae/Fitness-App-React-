@@ -29,12 +29,13 @@ function WorkoutList({ workouts, deleteInfo, handleEditId}) {
       <div>
         <h1 style={{textAlign: 'center'}}>Recent Workouts</h1>
 
-        <DropdownButton id="dropdown-basic-button" title="Dropdown button">
-          <Dropdown.Item href="#/action-1" onClick={handleClick} name="All">All</Dropdown.Item>
-          <Dropdown.Item href="#/action-1" onClick={handleClick} name="Weights">Weights</Dropdown.Item>
-          <Dropdown.Item href="#/action-2" onClick={handleClick} name="Cardio">Cardio</Dropdown.Item>
-          <Dropdown.Item href="#/action-3" onClick={handleClick} name="Sports">Sports</Dropdown.Item>
+        <DropdownButton style={{marginLeft: '47%',marginBottom: 20}} id="dropdown-basic-button" title="Sort By">
+          <Dropdown.Item onClick={handleClick} name="All">All</Dropdown.Item>
+          <Dropdown.Item onClick={handleClick} name="Weights">Weights</Dropdown.Item>
+          <Dropdown.Item onClick={handleClick} name="Cardio">Cardio</Dropdown.Item>
+          <Dropdown.Item onClick={handleClick} name="Sports">Sports</Dropdown.Item>
         </DropdownButton>
+
 
         <Container >
           <Row className="g-5" >
