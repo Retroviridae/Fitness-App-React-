@@ -1,0 +1,11 @@
+.App {
+    color: white;
+    background-color: black;
+    min-height: 100vh;
+  }
+  
+  .App.light {
+    --color: black;
+    --background: white;
+    /* --primary: var(--dark-turquoise); */
+  }
