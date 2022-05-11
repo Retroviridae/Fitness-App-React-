@@ -8,7 +8,7 @@ function Home({ goals }) {
       <div>
         <Card border="primary" style={{ width: '40rem' }}>
         <Card.Header className="text-center">Goals</Card.Header>
-        <Card.Img variant="top" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/FIA_F1_Austria_2021_Nr._55_Sainz.jpg/1920px-FIA_F1_Austria_2021_Nr._55_Sainz.jpg" />
+        <Card.Img variant="top" src="https://ih1.redbubble.net/image.1000561856.0547/pp,840x830-pad,1000x1000,f8f8f8.jpg" />
             <Card.Body>
                 <ListGroup>
                     <ListGroup.Item>Goal Weight: </ListGroup.Item>

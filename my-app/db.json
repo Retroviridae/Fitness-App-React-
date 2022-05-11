@@ -2,11 +2,11 @@
   "workouts": [
     {
       "id": 4,
-      "workout": "Wrasslin",
-      "category": "Sports",
-      "details": "Yes",
-      "date": "2022-05-10",
-      "calories": "2"
+      "workout": "4wtherh",
+      "category": "Cardio",
+      "details": "rsyhjedryhj",
+      "date": "2022-05-05",
+      "calories": "51581"
     },
     {
       "workout": "Wrasslin",
@@ -23,6 +23,14 @@
       "date": "",
       "calories": "7",
       "id": 6
+    },
+    {
+      "workout": "Wrasslin",
+      "category": "Cardio",
+      "details": "Navigate",
+      "date": "2022-05-28",
+      "calories": "-4",
+      "id": 7
     }
   ]
 }

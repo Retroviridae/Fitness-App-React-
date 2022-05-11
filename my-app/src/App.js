@@ -3,14 +3,16 @@ import WorkoutForm from './WorkoutForm';
 import WorkoutList from './WorkoutList';
 import WorkoutEditForm from './WorkoutEditForm';
 import React, { useState, useEffect } from 'react';
-import { Route, Switch } from "react-router-dom";
+import { Route, Routes,useNavigate } from "react-router";
 import Home from './Home';
 import Edit from './Edit';
-// import { useHistory } from 'react-router-dom'
+// import { Router } from 'react-router-dom';
+// import { BrowserRouter } from 'react-router-dom';
+// import { useNavigate } from 'react-router'
 
 
 function App() {
-  // const history = useHistory();
+  let navigate = useNavigate();
   const [workoutArr, setWorkoutArr] =useState([])
   const [editId, setEditId] = useState()
   const [form,setForm]=useState({
@@ -37,7 +39,7 @@ function App() {
       body: JSON.stringify(form)
   }).then(resp => resp.json())
     .then(data => setWorkoutArr([...workoutArr,data]))
-      // history.push("/workouts")
+    navigate("/workouts")
       setForm({
         workout:"",
         category:"",
@@ -50,7 +52,7 @@ function App() {
 
   function handleEditForm (e) {
     e.preventDefault()
-    // history.push("/workouts")
+    navigate("/workouts")
     fetch(`http://localhost:3000/workouts/${editId}`, {
       method: "PATCH",
       headers: {
@@ -64,7 +66,7 @@ function App() {
           return data
         }else return true
       })));
-        // history.push("/workouts")
+      navigate("/workouts")
   }
 
   function handleEditId(id) {
@@ -78,24 +80,18 @@ function App() {
   }
   
   return (
-    <div>
-      <Header />
-      <Switch>
-    <Route exact path="/">
-      {/* <p>This is the home page</p> */}
-      <Home />
-    </Route>
-    <Route path="/new">
-      <WorkoutForm form={form} handleFormChange={handleFormChange} handleSubmit={handleSubmit}/>
-    </Route>
-    <Route path="/workouts/:id/edit">
-      <WorkoutEditForm editId={editId} form={form} handleFormChange={handleFormChange} handleEditForm={handleEditForm}/>
-    </Route>
-    <Route path="/workouts">
-      <WorkoutList workouts={workoutArr} deleteInfo={deleteInfo} handleEditId={handleEditId}/>
-    </Route>
-    </Switch>
-    </div>
+     <div>
+      {/* <BrowserRouter> */}
+        <Header />
+          <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/new" element={<WorkoutForm form={form} handleFormChange={handleFormChange} handleSubmit={handleSubmit}/>} />
+          <Route path="/workouts" element={<WorkoutList workouts={workoutArr} deleteInfo={deleteInfo} handleEditId={handleEditId}/>} />
+          <Route path="/workouts/:id/edit" element={<WorkoutEditForm editId={editId} form={form} handleFormChange={handleFormChange} handleEditForm={handleEditForm}/>} />
+          <Route path="/edit" element={<Edit />} />
+          </Routes>
+      {/* </BrowserRouter> */}
+     </div>
   );
 }
 export default App;

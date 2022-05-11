@@ -11,17 +11,17 @@ function Header() {
         <Navbar.Brand href="/">
         <img
           alt=""
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/FIA_F1_Austria_2021_Nr._55_Sainz.jpg/1920px-FIA_F1_Austria_2021_Nr._55_Sainz.jpg"
+          src="https://ih1.redbubble.net/image.1000561856.0547/pp,840x830-pad,1000x1000,f8f8f8.jpg"
           width="30"
           height="30"
           className="d-inline-block align-top"
         />{' '}
-      ARCLIGHT
+      Dwight Schrute Gym for Muscles 
       </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <NavLink  exact to="/">Home</NavLink>
+            <NavLink to="/">Home</NavLink>
             <NavLink to="/workouts">Workouts</NavLink>
             <NavLink to="/new">New</NavLink>
           </Nav>

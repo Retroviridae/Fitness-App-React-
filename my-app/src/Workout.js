@@ -38,7 +38,7 @@ function Workout({ workout, deleteInfo, handleEditId }) {
             <Card.Body>
                 <Card.Text>Description: {workout.details}</Card.Text>
                 <ListGroup>
-                    <ListGroup.Item>Calories burned:{workout.calories}</ListGroup.Item>
+                    <ListGroup.Item>Calories burned: {workout.calories}</ListGroup.Item>
                     <ListGroup.Item>Category: {workout.category}</ListGroup.Item>
                     <ListGroup.Item>Date: {workout.date}</ListGroup.Item>
                 </ListGroup>
