@@ -9,8 +9,9 @@ function WorkoutList({ workouts, deleteInfo, handleEditId}) {
     return new Date(b.date) - new Date(a.date)})
   return (
       <div>
-        <Container>
-          <Row   className="g-5">
+        <h1 style={{textAlign: 'Center'}}>Recent Workouts</h1>
+        <Container >
+          <Row className="g-5" >
             {/* <CardGroup > */}
               {workouts.map(workout=> {
                 return (
