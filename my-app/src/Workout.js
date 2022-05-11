@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom'
 
 function Workout({ workout, deleteInfo, handleEditId }) {
   const {id} = workout
-  const bike = "http://www.emoji.co.uk/files/phantom-open-emojis/activity-phantom/12632-bicyclist.png"
-  const weights = "https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-10/256/man-lifting-weights-medium-skin-tone.png"
-  const sports = "https://img1.pnghut.com/3/4/3/KcFtrCUcgS/soccer-kick-team-sport-player-football-sports.jpg"
+  const bike = "https://media0.giphy.com/media/hsfd5I391lIZ3x8upg/giphy.gif?cid=790b76112b4545137a8c155720530deb7bd9845a0cbcacba&rid=giphy.gif&ct=s"
+  const weights = "https://monophy.com/media/gk4BzupRmq6mU5PclS/monophy.gif"
+  const sports = "https://st2.depositphotos.com/1413332/8448/v/600/depositphotos_84482438-stock-illustration-sport-text-logo-vector.jpg"
   const emoji = ()=>{
     if (workout.category === "Cardio"){
       return bike
@@ -32,7 +32,7 @@ function Workout({ workout, deleteInfo, handleEditId }) {
   }
 
     return (
-    <Card border="primary" style={{ width: '18rem' }}>
+    <Card border="secondary" style={{ width: '18rem' , marginRight: 20}}>
         <Card.Header className="text-center">{workout.workout}</Card.Header>
         <Card.Img variant="top" src={emoji()} />
             <Card.Body>

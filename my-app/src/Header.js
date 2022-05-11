@@ -3,10 +3,12 @@ import {  Navbar, Nav, Container, NavDropdown } from 'react-bootstrap/';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, NavLink, Switch } from "react-router-dom";
 
+let marginBottom = {
+  marginBottom: 50 }
 
 function Header() {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="lg" style={marginBottom}>
       <Container>
         <Navbar.Brand href="/">
         <img
