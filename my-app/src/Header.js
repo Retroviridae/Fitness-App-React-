@@ -3,8 +3,16 @@ import {  Navbar, Nav, Container, NavDropdown } from 'react-bootstrap/';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Route, NavLink, Switch } from "react-router-dom";
 
-let marginBottom = {
-  marginBottom: 50 }
+  let marginBottom = {
+    marginBottom: 50 }
+
+  let links = {
+    padding: 10,
+    textDecoration: "none",
+    // color: "#89d06",
+    color: "black",
+    fontWeight: 600
+  }
 
 function Header() {
   return (
@@ -20,12 +28,12 @@ function Header() {
         />{' '}
       Dwight Schrute Gym for Muscles 
       </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/workouts">Workouts</NavLink>
-            <NavLink to="/new">New</NavLink>
+          <Nav className="me-auto" >
+            <NavLink to="/" style={links}>Home</NavLink>
+            <NavLink to="/workouts" style={links}>Workouts</NavLink>
+            <NavLink to="/new" style={links}>New</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
