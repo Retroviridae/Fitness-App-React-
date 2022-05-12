@@ -40,14 +40,14 @@ function Workout({ workout, deleteInfo, handleEditId }) {
 
     return (
     <Card border="secondary" style={{ width: '18rem' , marginRight: 20}}>
-        <Card.Header className="text-center">{workout.workout}</Card.Header>
+        <Card.Header className="text-center" style={{fontWeight: 'bold'}}>{workout.workout}</Card.Header>
         <Card.Img variant="top" src={emoji()} />
             <Card.Body>
-                <Card.Text>Description: {workout.details}</Card.Text>
+                <Card.Text ><b>Description:</b> {workout.details}</Card.Text>
                 <ListGroup>
-                    <ListGroup.Item>Calories burned: {workout.calories}</ListGroup.Item>
-                    <ListGroup.Item>Category: {workout.category}</ListGroup.Item>
-                    <ListGroup.Item>Date: {workout.date}</ListGroup.Item>
+                    <ListGroup.Item><b>Calories burned:</b> {workout.calories}</ListGroup.Item>
+                    <ListGroup.Item><b>Category:</b> {workout.category}</ListGroup.Item>
+                    <ListGroup.Item><b>Date:</b> {workout.date}</ListGroup.Item>
                 </ListGroup>
                 <Link to={`/workouts/${id}/edit`}>
                   <Button  variant="primary" onClick={() => handleEdit(id)}>Edit</Button>
