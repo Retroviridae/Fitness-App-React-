@@ -1,14 +1,6 @@
 {
   "workouts": [
     {
-      "id": 4,
-      "workout": "4wtherh",
-      "category": "Cardio",
-      "details": "rsyhjedryhj",
-      "date": "2022-05-05",
-      "calories": "51581"
-    },
-    {
       "workout": "Football",
       "category": "Sports",
       "details": "Tackled somebody",
@@ -39,14 +31,6 @@
       "date": "2022-05-01",
       "calories": "2",
       "id": 8
-    },
-    {
-      "workout": "Wrasslin",
-      "category": "",
-      "details": "Yes",
-      "date": "",
-      "calories": "",
-      "id": 9
     }
   ]
 }

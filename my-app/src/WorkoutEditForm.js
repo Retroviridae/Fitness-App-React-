@@ -10,7 +10,7 @@ function WorkoutEditForm({ form, handleFormChange, handleEditForm, editId}) {
 
   
   return (
-    <form onSubmit={(e)=>handleEditForm(e)}>
+    <form style={{ width: '40rem',margin: 'auto' }} onSubmit={(e)=>handleEditForm(e)}>
       <Row>
         <Form.Label column lg={2}>
           Workout
