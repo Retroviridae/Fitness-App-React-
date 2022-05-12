@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 
 function Workout({ workout, deleteInfo, handleEditId }) {
   const {id} = workout
+  const body = "https://media4.giphy.com/media/Kb4K88iD29VH52YoJM/giphy.gif?cid=790b7611919104b5dbff570414c8538b98280720fbb3b41d&rid=giphy.gif&ct=s"
   const bike = "https://media0.giphy.com/media/hsfd5I391lIZ3x8upg/giphy.gif?cid=790b76112b4545137a8c155720530deb7bd9845a0cbcacba&rid=giphy.gif&ct=s"
   const weights = "https://monophy.com/media/gk4BzupRmq6mU5PclS/monophy.gif"
   const sports = "https://st2.depositphotos.com/1413332/8448/v/600/depositphotos_84482438-stock-illustration-sport-text-logo-vector.jpg"
@@ -15,6 +16,8 @@ function Workout({ workout, deleteInfo, handleEditId }) {
       return weights
     }else if (workout.category === 'Sports'){
       return sports
+    }else if (workout.category === 'Body Weight'){
+      return body
     }else  {
       return blank
     }
@@ -37,14 +40,14 @@ function Workout({ workout, deleteInfo, handleEditId }) {
 
     return (
     <Card border="secondary" style={{ width: '18rem' , marginRight: 20}}>
-        <Card.Header className="text-center">{workout.workout}</Card.Header>
+        <Card.Header className="text-center" style={{fontWeight: 'bold'}}>{workout.workout}</Card.Header>
         <Card.Img variant="top" src={emoji()} />
             <Card.Body>
-                <Card.Text>Description: {workout.details}</Card.Text>
+                <Card.Text ><b>Description:</b> {workout.details}</Card.Text>
                 <ListGroup>
-                    <ListGroup.Item>Calories burned: {workout.calories}</ListGroup.Item>
-                    <ListGroup.Item>Category: {workout.category}</ListGroup.Item>
-                    <ListGroup.Item>Date: {workout.date}</ListGroup.Item>
+                    <ListGroup.Item><b>Calories burned:</b> {workout.calories}</ListGroup.Item>
+                    <ListGroup.Item><b>Category:</b> {workout.category}</ListGroup.Item>
+                    <ListGroup.Item><b>Date:</b> {workout.date}</ListGroup.Item>
                 </ListGroup>
                 <Link to={`/workouts/${id}/edit`}>
                   <Button  variant="primary" onClick={() => handleEdit(id)}>Edit</Button>
