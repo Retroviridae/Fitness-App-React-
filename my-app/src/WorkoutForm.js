@@ -44,6 +44,7 @@ function WorkoutForm({ form, handleFormChange, handleSubmit }) {
             <option value="Cardio">Cardio</option>
             <option value="Weights">Weights</option>
             <option value="Sports">Sports</option>
+            <option value="Body Weight">Body Weight</option>
           </Form.Select>
         </Col>
       </Row>

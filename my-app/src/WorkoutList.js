@@ -33,6 +33,7 @@ function WorkoutList({ workouts, deleteInfo, handleEditId}) {
           <Dropdown.Item onClick={handleClick} name="Weights">Weights</Dropdown.Item>
           <Dropdown.Item onClick={handleClick} name="Cardio">Cardio</Dropdown.Item>
           <Dropdown.Item onClick={handleClick} name="Sports">Sports</Dropdown.Item>
+          <Dropdown.Item onClick={handleClick} name="Body Weight">Body Weight</Dropdown.Item>
         </DropdownButton>
         <Container >
           <Row className="g-5" >
