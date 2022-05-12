@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 function WorkoutForm({ form, handleFormChange, handleSubmit }) {
   return (
     <form style={{ width: '40rem',margin: 'auto' }} onSubmit={(e)=>handleSubmit(e)}>
+      <h2>Log a new workout</h2>
       <Row className='mt-2'>
         <Form.Label column lg={2}>
           Workout

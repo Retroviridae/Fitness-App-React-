@@ -7,7 +7,8 @@ function Home() {
   return (
       <div>
         <Card border="primary" style={{ width: '40rem' , margin: 'auto'}}>
-        <Card.Header className="text-center">"I am ready to face any challenges that might be foolish enough to face me"</Card.Header>
+        <Card.Header className="text-center" style={{fontWeight: 'bold', fontSize: '22px'}} >
+          "I am ready to face any challenges that might be foolish enough to face me"</Card.Header>
         <Card.Img variant="top" src="https://ih1.redbubble.net/image.1000561856.0547/pp,840x830-pad,1000x1000,f8f8f8.jpg" />
             <Card.Body>
                 <ListGroup>
