@@ -7,6 +7,7 @@ function Workout({ workout, deleteInfo, handleEditId }) {
   const bike = "https://media0.giphy.com/media/hsfd5I391lIZ3x8upg/giphy.gif?cid=790b76112b4545137a8c155720530deb7bd9845a0cbcacba&rid=giphy.gif&ct=s"
   const weights = "https://monophy.com/media/gk4BzupRmq6mU5PclS/monophy.gif"
   const sports = "https://st2.depositphotos.com/1413332/8448/v/600/depositphotos_84482438-stock-illustration-sport-text-logo-vector.jpg"
+  const blank = "https://ih1.redbubble.net/image.696077935.6074/flat,750x1000,075,f.u4.jpg"
   const emoji = ()=>{
     if (workout.category === "Cardio"){
       return bike
@@ -14,7 +15,10 @@ function Workout({ workout, deleteInfo, handleEditId }) {
       return weights
     }else if (workout.category === 'Sports'){
       return sports
+    }else  {
+      return blank
     }
+    
   }
 
  

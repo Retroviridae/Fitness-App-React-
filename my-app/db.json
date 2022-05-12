@@ -9,11 +9,11 @@
       "calories": "51581"
     },
     {
-      "workout": "Wrasslin",
-      "category": "Cardio",
-      "details": "Yes",
-      "date": "",
-      "calories": "3",
+      "workout": "Football",
+      "category": "Sports",
+      "details": "Tackled somebody",
+      "date": "2022-05-11",
+      "calories": "4",
       "id": 5
     },
     {
@@ -31,6 +31,22 @@
       "date": "2022-05-28",
       "calories": "-4",
       "id": 7
+    },
+    {
+      "workout": "GYM",
+      "category": "",
+      "details": "GYMn",
+      "date": "2022-05-01",
+      "calories": "2",
+      "id": 8
+    },
+    {
+      "workout": "Wrasslin",
+      "category": "",
+      "details": "Yes",
+      "date": "",
+      "calories": "",
+      "id": 9
     }
   ]
 }
