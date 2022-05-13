@@ -2,7 +2,6 @@ import React, {useState} from "react";
 import { Card, Button, Form } from 'react-bootstrap/';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { NavLink } from 'react-router-dom';
 import { useNavigate } from "react-router";
 
 function Edit({handleHomeEdit}) {
@@ -23,6 +22,7 @@ function Edit({handleHomeEdit}) {
       handleHomeEdit(form)
       navigate("/")
   }
+  
   return (
       <div>
         <Card border="primary" style={{ width: '40rem',margin:"auto" }}>

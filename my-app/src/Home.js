@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Card, Button, ListGroup, Form } from 'react-bootstrap/';
 import { NavLink } from 'react-router-dom';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
 
 function Home({homeEdit}) {
   const {weight, primary, secondary} = homeEdit

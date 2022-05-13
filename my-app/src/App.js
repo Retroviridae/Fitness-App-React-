@@ -27,15 +27,17 @@ function App() {
     date:"",
     calories:""
   })
+  
   useEffect(()=>{
     fetch("http://localhost:3000/workouts")
     .then(resp =>resp.json())
     .then(data => setWorkoutArr(data))
-  } 
-    ,[])
+  },[])
+  
   function handleFormChange(e){
     setForm({...form,[e.target.name]:e.target.value})
   }
+  
   function handleSubmit(e){
     e.preventDefault()
     fetch("http://localhost:3000/workouts",{
@@ -51,9 +53,7 @@ function App() {
         details:"",
         date:"",
         calories:""
-    
-  })
-} 
+  })} 
 
   function handleEditForm (e) {
     e.preventDefault()
@@ -77,7 +77,7 @@ function App() {
     
   })
   }
-
+  //takes in id from edit button to route
   function handleEditId(id) {
     setEditId(id)
   }
@@ -88,6 +88,7 @@ function App() {
     setWorkoutArr(filteredWorkouts)
   }
   
+
   function handleHomeEdit(data) {
     setHomeEdit(data)
   }
@@ -97,11 +98,11 @@ function App() {
       {/* <BrowserRouter> */}
         <Header />
           <Routes>
-          <Route path="/" element={<Home homeEdit={homeEdit}/>} />
-          <Route path="/new" element={<WorkoutForm form={form} handleFormChange={handleFormChange} handleSubmit={handleSubmit}/>} />
-          <Route path="/workouts" element={<WorkoutList workouts={workoutArr} deleteInfo={deleteInfo} handleEditId={handleEditId}/>} />
-          <Route path="/workouts/:id/edit" element={<WorkoutEditForm editId={editId} form={form} handleFormChange={handleFormChange} handleEditForm={handleEditForm}/>} />
-          <Route path="/edit" element={<Edit handleHomeEdit={handleHomeEdit}/>} />
+            <Route path="/" element={<Home homeEdit={homeEdit}/>} />
+            <Route path="/new" element={<WorkoutForm form={form} handleFormChange={handleFormChange} handleSubmit={handleSubmit}/>} />
+            <Route path="/workouts" element={<WorkoutList workouts={workoutArr} deleteInfo={deleteInfo} handleEditId={handleEditId}/>} />
+            <Route path="/workouts/:id/edit" element={<WorkoutEditForm editId={editId} form={form} handleFormChange={handleFormChange} handleEditForm={handleEditForm}/>} />
+            <Route path="/edit" element={<Edit handleHomeEdit={handleHomeEdit}/>} />
           </Routes>
       {/* </BrowserRouter> */}
      </div>

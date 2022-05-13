@@ -2,15 +2,15 @@ import React from 'react'
 import { Form, Button} from 'react-bootstrap/';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-// import { useParams, useHistory } from 'react-router-dom'
 
 
 
-function WorkoutEditForm({ form, handleFormChange, handleEditForm, editId}) {
+function WorkoutEditForm({ form, handleFormChange, handleEditForm}) {
 
   
   return (
     <form style={{ width: '40rem',margin: 'auto' }} onSubmit={(e)=>handleEditForm(e)}>
+      
       <Row>
         <Form.Label column lg={2}>
           Workout
@@ -67,9 +67,6 @@ function WorkoutEditForm({ form, handleFormChange, handleEditForm, editId}) {
       </Button>
       {/* </Link> */}
     </form>
-
-    
-    
   )
 }
 

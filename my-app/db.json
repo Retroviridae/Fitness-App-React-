@@ -1,14 +1,6 @@
 {
   "workouts": [
     {
-      "workout": "Football",
-      "category": "Sports",
-      "details": "Tackled somebody",
-      "date": "2022-05-03",
-      "calories": "130",
-      "id": 5
-    },
-    {
       "workout": "Chest",
       "category": "Weights",
       "details": "3 reps of benches",
@@ -43,9 +35,9 @@
     {
       "workout": "Volleyball",
       "category": "Sports",
-      "details": "Won 2 games",
+      "details": "Played 5 games and won 3",
       "date": "2022-05-10",
-      "calories": "230",
+      "calories": "310",
       "id": 10
     },
     {
@@ -63,6 +55,14 @@
       "date": "2022-03-31",
       "calories": "120",
       "id": 12
+    },
+    {
+      "workout": "Football",
+      "category": "Sports",
+      "details": "Tackled somebody",
+      "date": "2022-05-03",
+      "calories": "360",
+      "id": 13
     }
   ]
 }
