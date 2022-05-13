@@ -15,6 +15,11 @@ function App() {
   let navigate = useNavigate();
   const [workoutArr, setWorkoutArr] =useState([])
   const [editId, setEditId] = useState()
+  const [homeEdit, setHomeEdit] = useState({
+    weight: '235lbs',
+    primary: 'Be promoted to CEO',
+    secondary: 'Marry Angela'
+  })
   const [form,setForm]=useState({
     workout:"",
     category:"",
@@ -83,18 +88,20 @@ function App() {
     setWorkoutArr(filteredWorkouts)
   }
   
-
+  function handleHomeEdit(data) {
+    setHomeEdit(data)
+  }
 
   return (
      <div>
       {/* <BrowserRouter> */}
         <Header />
           <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home homeEdit={homeEdit}/>} />
           <Route path="/new" element={<WorkoutForm form={form} handleFormChange={handleFormChange} handleSubmit={handleSubmit}/>} />
           <Route path="/workouts" element={<WorkoutList workouts={workoutArr} deleteInfo={deleteInfo} handleEditId={handleEditId}/>} />
           <Route path="/workouts/:id/edit" element={<WorkoutEditForm editId={editId} form={form} handleFormChange={handleFormChange} handleEditForm={handleEditForm}/>} />
-          <Route path="/edit" element={<Edit />} />
+          <Route path="/edit" element={<Edit handleHomeEdit={handleHomeEdit}/>} />
           </Routes>
       {/* </BrowserRouter> */}
      </div>
