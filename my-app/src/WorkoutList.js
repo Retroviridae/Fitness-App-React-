@@ -20,14 +20,10 @@ function WorkoutList({ workouts, deleteInfo, handleEditId}) {
     }
   })
 
-  
-  //// ORDERED ARRAY NOT CALLED YET //////
-  // const orderedWorkouts = workouts.slice().sort(function(a,b){
-  //   return new Date(b.date) - new Date(a.date)})
-
   return (
       <div>
         <h1 style={{textAlign: 'center'}}>Recent Workouts</h1>
+        
         <DropdownButton style={{marginLeft: '47%',marginBottom: 20}} id="dropdown-basic-button" title="Sort By">
           <Dropdown.Item onClick={handleClick} name="All">All</Dropdown.Item>
           <Dropdown.Item onClick={handleClick} name="Weights">Weights</Dropdown.Item>
@@ -35,9 +31,9 @@ function WorkoutList({ workouts, deleteInfo, handleEditId}) {
           <Dropdown.Item onClick={handleClick} name="Sports">Sports</Dropdown.Item>
           <Dropdown.Item onClick={handleClick} name="Body Weight">Body Weight</Dropdown.Item>
         </DropdownButton>
+        
         <Container >
-          <Row className="g-5" >
-            {/* <CardGroup > */}
+          <Row className="g-5">
               {filteredArr.map(workout=> {
                 return (
                   <Workout 
@@ -46,7 +42,6 @@ function WorkoutList({ workouts, deleteInfo, handleEditId}) {
                     deleteInfo={deleteInfo}
                     handleEditId={handleEditId}
                 />)})}
-            {/* </CardGroup> */}
           </Row>
         </Container>
       </div>
