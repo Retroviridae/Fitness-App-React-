@@ -40,7 +40,7 @@ function Workout({ workout, deleteInfo, handleEditId }) {
 
     return (
     <Card border="secondary" style={{ width: '18rem' , marginRight: 20}}>
-        <Card.Header className="text-center" style={{fontWeight: 'bold'}}>{workout.workout}</Card.Header>
+        <Card.Header className="text-center" style={{fontWeight: 'bold', fontSize: '20px'}}>{workout.workout}</Card.Header>
         <Card.Img variant="top" src={emoji()} />
             <Card.Body>
                 <Card.Text ><b>Description:</b> {workout.details}</Card.Text>
