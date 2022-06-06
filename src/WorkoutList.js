@@ -18,6 +18,7 @@ function WorkoutList({ workouts, deleteInfo, handleEditId}) {
     }else if (type === 'All'){
       return workout
     }
+    return workout
   })
 
   return (
